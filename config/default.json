@@ -1,5 +1,6 @@
 {
 	"destination": "./generated/",
 	"extension": ".js",
-	"generated": ".generated"
+	"generated": ".generated",
+	"domainDefinitions": "../domain/definitions"
 }
