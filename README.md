@@ -7,6 +7,7 @@ This is a node module design to build class for Javascript SPA.
 ## Dependencies
 
 ## Contributions
+- Install [nodejs](http://nodejs.org/)
 - Install dev dependencies
 ```:bash
 npm install -g mocha chai
