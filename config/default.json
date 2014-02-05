@@ -1,5 +1,9 @@
 {
 	"destination": "./generated/",
 	"extension": ".js",
-	"generated": ".generated"
+	"generated": ".generated",
+	"source": {
+		"type": "file",
+		"value": "example/definition"
+	}
 }

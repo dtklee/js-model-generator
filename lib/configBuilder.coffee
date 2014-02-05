@@ -23,9 +23,9 @@ program.parse(process.argv)
 #Combine the application configuration.
 config = require('../config/default')
 console.log("../" , program.configuration)
-configUser = if(program.config) then require("../" + program.config) else {}
+configUser = {} #todo: resolve this problem #if(program.config) then require("../" + program.config) else {}
 cmdConfig = _.pick(program, 'destination','extension', 'generated')
-#
+# Extend the configuration in the following order: defalut, extended by user config extended by command line config.
 _.extend(config, configUser, cmdConfig)
 
 module.exports = config
