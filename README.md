@@ -16,3 +16,7 @@ npm install -g mocha chai coffee-script
 ```:bash
 npm install
 ```
+- Run the fake api for tests or dev
+```:bash
+npm run api-example
+```
