@@ -20,7 +20,6 @@
   "license": "MIT",
   "dependencies": {
     "underscore": "~1.5.2",
-    "q-http": "~0.1.16",
     "q-io": "~1.10.8",
     "js-beautify": "~1.4.2",
     "commander": "~2.1.0"

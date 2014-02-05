@@ -2,5 +2,9 @@
 	"destination": "./generated/",
 	"extension": ".js",
 	"generated": ".generated",
-	"domainDefinitions": "../domain/definitions"
+	"domainDefinitions": "../domain/definitions",
+	"source": {
+		"type": "file",
+		"value": "example/definition"
+	}
 }
