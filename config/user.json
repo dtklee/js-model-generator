@@ -1,0 +1,5 @@
+{
+	"destination": "./generatedUser/",
+	"extension": ".userjs",
+	"generated": ".genuser"
+}

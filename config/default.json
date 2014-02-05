@@ -1,0 +1,5 @@
+{
+	"destination": "./generated/",
+	"extension": ".js",
+	"generated": ".generated"
+}
