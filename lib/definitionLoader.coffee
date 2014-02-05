@@ -2,8 +2,11 @@
 loadDefinitionsFromFile = (path, cb)->
 	#return require("../#{path}")
 	FS = require('q-io/fs')
-	return FS.read("#{__dirname}/../#{path}/index.json ")
-	  		 .then(JSON.parse, console.log)
+	return FS.read("#{__dirname}/../#{path}/index.json")
+	  		 .then(
+	  		 	(content)-> return JSON.parse(content),
+	  		 	(err)->return err
+	  		 )
 
 #Load the definition from the url given in argument.
 loadDefinitionsFromUrl = (url, cb)->

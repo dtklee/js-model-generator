@@ -22,7 +22,8 @@
     "underscore": "~1.5.2",
     "q-io": "~1.10.8",
     "js-beautify": "~1.4.2",
-    "commander": "~2.1.0"
+    "commander": "~2.1.0",
+    "bluebird": "~1.0.2"
   },
   "devDependencies": {
     "mocha": "~1.17.1",
