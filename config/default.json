@@ -4,7 +4,7 @@
 	"generated": ".generated",
 	"domainDefinitions": "../domain/definitions",
 	"source": {
-		"type": "file",
-		"value": "example/definition"
+		"type": "url",
+		"value": "http://localhost:3000/definition"
 	}
 }

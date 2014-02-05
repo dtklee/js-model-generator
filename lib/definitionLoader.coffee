@@ -1,20 +1,17 @@
 #Load the definition form the path given in argument.
-loadDefinitionsFromFile = (path, cb)->
-	#return require("../#{path}")
+loadDefinitionsFromFile = (path)->
 	FS = require('q-io/fs')
 	return FS.read("#{__dirname}/../#{path}/index.json")
-	  		 .then(
-	  		 	(content)-> return JSON.parse(content),
-	  		 	(err)->return err
-	  		 )
+	  		 .then(JSON.parse)
 
 #Load the definition from the url given in argument.
-loadDefinitionsFromUrl = (url, cb)->
-	throw new Error('NOT YET IMPLEMENTED')
+loadDefinitionsFromUrl = (url)->
 	HTTP = require('q-io/http')
-	return {}
+	return HTTP.read(url)
+	           .then(JSON.parse)
 
-exports.load = (source, cb)->
+# Read the  definition file depending on the file.
+exports.load = (source)->
 	switch source.type
-		when "file" then return loadDefinitionsFromFile(source.value, cb)
-		when "url" then return loadDefinitionsFromUrl(source.value, cb)
+		when "file" then return loadDefinitionsFromFile(source.value)
+		when "url" then return loadDefinitionsFromUrl(source.value)
