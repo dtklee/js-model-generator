@@ -4,7 +4,9 @@
   "description": "Model generator for javascripts applications.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "start": "coffee generator.coffee",
+    "test": "mocha",
+    "api-example": "node example/api-definition/app.js"
   },
   "repository": {
     "type": "git",
@@ -27,6 +29,7 @@
   },
   "devDependencies": {
     "mocha": "~1.17.1",
-    "chai": "~1.9.0"
+    "chai": "~1.9.0",
+    "express": "~3.4.8"
   }
 }

@@ -1,0 +1,27 @@
+{
+	"contact": {
+		"name": "contact",
+		"fields": [{
+			"name": "firstName",
+			"domain": "DO_TEXTE_50",
+			"isCompulsory": true,
+			"label": "firstName"
+		}, {
+			"name": "lastName",
+			"domain": "DO_TEXTE_50",
+			"isCompulsory": true,
+			"label": "lastName"
+		}, {
+			"name": "dateOfBirth",
+			"domain": "DO_DATE",
+			"isCompulsory": false,
+			"label": "dateOfBirth"
+		}, {
+			"name": "age",
+			"domain": "DO_NUMBER",
+			"isCompulsory": false,
+			"label": "firstName"
+		}]
+	}
+
+}
