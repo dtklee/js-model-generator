@@ -10,7 +10,7 @@ This is a node module design to build class for Javascript SPA.
 - Install [nodejs](http://nodejs.org/)
 - Install dev dependencies
 ```:bash
-npm install -g mocha chai
+npm install -g mocha chai coffee-script
 ```
 - Install modules dependencies
 ```:bash
