@@ -3,6 +3,40 @@ fs = require('q-io/fs')
 module.exports = (destination, domainsPath, definitions)->
 	domains = require domainsPath
 
+processDefinition = (destination, domains, definition)->
+	jsStringFile = generateStringFile(domains, definition)
+	#generateFile()
+
+# Generate a string representation of the 
+generateStringFile = (domains, definition)->
+
+
+#Generate file name
+generateFileName = (name, options)->
+	name = processSystemName(name)
+	options = options or {}
+	extension = options.extension or '.js'
+	directory = options.directory or './'
+	generatedExtension = options.generatedExtension or '.generated'
+	#console.log "###########################################"
+	#console.log "fileNAme","#{directory}#{name}#{extension}"
+	"#{directory}#{name}#{generatedExtension}#{extension}"
+
+generateFile = (fileName, stringFile)->
+	fn = fn = generateFileName(fileName, {directory: config.destination})
+	fs.write(fn, stringFile)
+	.then(
+		()->
+		console.log "#{fileName} saved to #{fn}"
+		,(err)->
+			console.log "Error writing file : #{err}"
+		)
+
+# Generate files for each entities
+generateFiles = ()->
+	console.log "\n## Generated files"
+	#processEntity(entity) for entity in entitiesConfig
+
 # Process the system name in order to clean it, camelize, remove prefix, enlight date, id, code,...
 processSystemName = (name)->
   if _s.include(name, config.prefix)
@@ -28,29 +62,3 @@ capitaliseFirstLetter = (string)->
 # Lower the first character of the string.
 lowerFirstLetter = (string)->
     string.charAt(0).toLowerCase() + string.slice(1)
-
-#Generate file name
-generateFileName = (name, options)->
-	name = processSystemName(name)
-	options = options or {}
-	extension = options.extension or '.js'
-	directory = options.directory or './'
-	generatedExtension = options.generatedExtension or '.generated'
-	#console.log "###########################################"
-	#console.log "fileNAme","#{directory}#{name}#{extension}"
-	"#{directory}#{name}#{generatedExtension}#{extension}"
-
-generFile = (fileName, stringFile)->
-	fn = fn = generateFileName(fileName, {directory: config.destination})
-	fs.write(fn, stringFile)
-	.then(
-		()->
-		console.log "#{fileName} saved to #{fn}"
-		,(err)->
-			console.log "Error writing file : #{err}"
-		)
-
-# Generate files for each entities
-generateFiles = ()->
-	console.log "\n## Generated files"
-	#processEntity(entity) for entity in entitiesConfig
